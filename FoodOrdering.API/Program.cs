@@ -1,6 +1,9 @@
 
 using FoodOrdering.Core.Entities;
+using FoodOrdering.Core.Interfaces;
+using FoodOrdering.Infrastructure;
 using FoodOrdering.Infrastructure.Data;
+using FoodOrdering.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,6 +33,9 @@ namespace FoodOrdering.API
             builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
+            // Register repository and UnitOfWork
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             var app = builder.Build();
 
