@@ -48,6 +48,11 @@ namespace FoodOrdering.Infrastructure.Data
                 .WithMany()
                 .HasForeignKey(od => od.MenuItemId)
                 .OnDelete(DeleteBehavior.Restrict);
+            //builder.Entity<MenuItem>()
+            //    .HasMany(od => od.OrderDetails)
+            //    .WithOne()
+            //    .HasForeignKey(m => m.MenuItemId)
+            //    .OnDelete(DeleteBehavior.Restrict);
             // Tương tự, ta nên chặn xóa Restaurant nếu đã có Order
             builder.Entity<Order>()
                 .HasOne(o => o.Restaurant)
