@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="15.1.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -20,10 +20,6 @@
     <ProjectReference Include="..\FoodOrdering.Core\FoodOrdering.Core.csproj" />
     <ProjectReference Include="..\FoodOrdering.Infrastructure\FoodOrdering.Infrastructure.csproj" />
     <ProjectReference Include="..\FoodOrdering.Service\FoodOrdering.Service.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
